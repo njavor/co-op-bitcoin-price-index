@@ -5,12 +5,16 @@
 
 header{
     display:grid;
-    border-bottom:3px solid black;
+    border-bottom:4px solid black;
     justify-content: center;
     align-content: center;
     height:100px;
     background-color: rgb(85, 9, 129);
     color:whitesmoke;
+}
+
+header h1, header h2{
+    text-align: center;
 }
 
 main{
