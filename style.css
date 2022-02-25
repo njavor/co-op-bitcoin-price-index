@@ -34,3 +34,33 @@ main .maindiv{
 main .maindiv h2, .maindiv p{
     grid-column-end: span 2;
 }
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+nav a { 
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover { 
+    color:cadetblue;
+    transition: 0.3s;
+}
+
+nav ul{
+    display:flex;
+    list-style: none;
+    gap:25px;
+    justify-content: center;
+}
+
+nav a, footer{
+    font-weight:bold;
+    color:red;
+}
