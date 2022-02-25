@@ -1,1 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+}
 
+header{
+    display:grid;
+    border-bottom:3px solid black;
+    justify-content: center;
+    align-content: center;
+    height:100px;
+    background-color: rgb(90, 42, 42);
+    color:whitesmoke;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 500px;
+    justify-content: center;    
+    row-gap: 5px;
+    margin-top: 10px;
+}
+
+main .maindiv{
+    display: grid;
+    grid-template-columns: 100px 400px;
+    border:  1px solid black;
+}
+
+main .maindiv h2, .maindiv p{
+    grid-column-end: span 2;
+}
