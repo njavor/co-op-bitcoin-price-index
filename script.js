@@ -1,7 +1,34 @@
-document.addEventListener('DOMContentLoaded', updateTime)
+document.addEventListener('DOMContentLoaded', main)
+setInterval(updateTime, 1000);
+setInterval(main, 1000)
+
+async function main(){
+
+    let USDdiv = document.querySelector('#USD');
+    let GBPdiv = document.querySelector('#GBP');
+    let EURdiv = document.querySelector('#EUR');
+    let TIMEdiv = document.querySelector('#time');
+
+    let szotar = await olvaso_fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+    console.log(szotar['time']);
+    console.log(szotar['bpi']['USD']);
+    console.log(szotar['bpi']['GBP']);
+    console.log(szotar['bpi']['EUR']);
+
+    TIMEdiv.innerHTML = szotar.time.updateduk;
+    USDdiv.innerHTML=szotar.bpi.USD.rate;
+    GBPdiv.innerHTML=szotar.bpi.GBP.rate;
+    EURdiv.innerHTML=szotar.bpi.EUR.rate;
+}
+
+async function olvaso_fetch(url){
+    let promise = await fetch(url);
+    let promise_json = await promise.json();
+    return promise_json;
+}
 
 function updateTime(){
-    let kimeno = document.querySelector("#les");
+    let kimeno = document.querySelector("#ido");
 
     let currentTime = new Date();
     let hours = currentTime.getHours();
@@ -14,12 +41,5 @@ function updateTime(){
         seconds = "0" + seconds;
     }
     let t_str = hours + ":" + minutes + ":" + seconds + " ";
-    if(hours > 11){
-        t_str += "PM";
-    } 
-    else {
-        t_str += "AM";
-    }
     kimeno.innerHTML = t_str;
 }
-setInterval(updateTime, 1000);
