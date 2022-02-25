@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', main)
-setInterval(updateTime, 1000);
-setInterval(main, 1000)
+setInterval(asdf, 1000);
+
+function asdf()
+{
+    main();
+    updateTime();
+}
 
 async function main(){
 
@@ -10,11 +15,7 @@ async function main(){
     let TIMEdiv = document.querySelector('#time');
 
     let szotar = await olvaso_fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
-    console.log(szotar['time']);
-    console.log(szotar['bpi']['USD']);
-    console.log(szotar['bpi']['GBP']);
-    console.log(szotar['bpi']['EUR']);
-
+    
     TIMEdiv.innerHTML = szotar.time.updateduk;
     USDdiv.innerHTML=szotar.bpi.USD.rate;
     GBPdiv.innerHTML=szotar.bpi.GBP.rate;
