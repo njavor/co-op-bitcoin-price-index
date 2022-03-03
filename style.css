@@ -2,6 +2,15 @@
     margin:0;
     padding:0;
 }
+body #egy{
+    background-image: url("https://cdn.portfolio.hu/articles/images-xl/b/i/t/bitcoin-516349.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:yellow;
+  }
+body #kettő{
+    background-color: aquamarine;
+  }
 
 header{
     display:grid;
