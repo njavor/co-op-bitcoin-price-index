@@ -9,7 +9,7 @@ header{
     justify-content: center;
     align-content: center;
     height:100px;
-    background-color: rgb(85, 9, 129);
+    background-color: rgba(38, 0, 255, 0.473);
     color:whitesmoke;
 }
 
@@ -54,6 +54,7 @@ nav a:hover {
 }
 
 nav ul{
+    margin-top: 5px;
     display:flex;
     list-style: none;
     gap:25px;
@@ -63,4 +64,8 @@ nav ul{
 nav a, footer{
     font-weight:bold;
     color:red;
+}
+
+nav #akt{
+    color: blue;
 }
